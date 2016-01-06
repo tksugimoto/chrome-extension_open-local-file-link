@@ -1,12 +1,14 @@
 
-
-Array.prototype.forEach.call(document.querySelectorAll('a[href^="\\\\"]'), function (elem) {
-    elem.addEventListener("click", function (evt) {
-        evt.preventDefault();
-        var path = elem.href;
-        chrome.runtime.sendMessage({
-            method: "openLocalFile",
-            path: path
-        });
-    });
+document.body.addEventListener("click", function (evt) {
+    var target = evt.target;
+    if (target.tagName === "A") {
+        var path = target.href;
+        if (path.lastIndexOf("file://", 0) === 0) {
+            evt.preventDefault();
+            chrome.runtime.sendMessage({
+                method: "openLocalFile",
+                path: path
+            });
+        }
+    }
 });
