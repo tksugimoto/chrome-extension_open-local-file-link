@@ -8,10 +8,13 @@ document.body.addEventListener("click", function (evt) {
         var path = target.href;
         if (path.lastIndexOf("file://", 0) === 0) {
             evt.preventDefault();
-            chrome.runtime.sendMessage({
-                method: "openLocalFile",
-                path: path
-            });
+            // 拡張が再読み込みされた場合エラーになるので捕捉
+            try {
+                chrome.runtime.sendMessage({
+                    method: "openLocalFile",
+                    path: path
+                });
+            } catch (e) {}
         }
     }
 });
