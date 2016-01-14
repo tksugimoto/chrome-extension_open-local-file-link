@@ -22,5 +22,6 @@
 		"js": [
 			"content_script.js"
 		]
-	}]
+	}],
+	"options_page": "options.html"
 }

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="utf-8">
+	<title>設定: ローカルファイルリンク有効化</title>
+	<style>
+		body {
+			font-size: 20px;
+			width: 800px;
+			margin: 0 auto;
+		}
+		h1 {
+			margin-bottom: 0;
+		}
+		p.desc {
+			font-size: 15px;
+			margin-top: 0;
+		}
+		.block {
+			border-bottom: gray 2px solid;
+		}
+		button.delete {
+			margin-right: 10px;
+		}
+	</style>
+</head>
+<body>
+	<div class="block">
+		<h1>
+			許可ドメインリスト
+		</h1>
+		<p class="desc">
+			このドメインのWebページを信頼する<br>
+			ローカルファイルへのリンクをクリックした際に確認なしでローカルファイルを開く
+		</p>
+		<ul id="allow-domain-container">
+		</ul>
+	</div>
+	<div class="block">
+		<h1>
+			拒否ドメインリスト
+		</h1>
+		<p class="desc">
+			このドメインのWebページを信頼しない<br>
+			ローカルファイルへのリンクをクリックした際にローカルファイルを開かない（確認も出さない）
+		</p>
+		<ul id="deny-domain-container">
+		</ul>
+	</div>
+	<p>
+		※リストに無いドメインのページはリンクをクリックした都度確認ダイアログが出ます
+	</p>
+	<script src="options_script.js"></script>
+</body>
+</html>
