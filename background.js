@@ -65,7 +65,8 @@ chrome.notifications.onButtonClicked.addListener(function (notificationId, butto
 
 function openLocalFile(localFilePath, baseTab) {
 	chrome.tabs.create({
-		url: localFilePath
+		url: localFilePath,
+		index: baseTab.index + 1
 	});
 }
 
