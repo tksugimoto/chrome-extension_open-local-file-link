@@ -2,7 +2,7 @@
 	"name": "ローカルファイルリンク有効化",
 	"version": "0.1",
 	"manifest_version": 2,
-	"description": "local fileへのリンクをChromeでクリックしたら開く",
+	"description": "Chromeで無効にされているローカルファイルへのリンクをクリックで開けるようにする",
 	"icons": {
 		"128": "icon/icon.png"
 	},
