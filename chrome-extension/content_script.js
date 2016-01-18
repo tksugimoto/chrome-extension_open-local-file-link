@@ -25,3 +25,49 @@ window.addEventListener('click', evt => {
 		}
 	}
 });
+
+var Button = {
+	LEFT: 0,
+	MIDDLE: 1,
+	RIGHT: 2
+};
+
+// <pre>, <p>, <code>にlocalファイルのパスが書かれている場合にリンクにする
+(function () {
+	"use strict";
+	var className = "chrome-extension-" + chrome.runtime.id + "-local-file-link";
+	
+	var style = document.createElement("style");
+	style.appendChild(document.createTextNode(`
+		.${className} {
+			cursor: pointer;
+			text-decoration: underline;
+		}
+		.${className}:hover {
+			text-decoration: none;
+		}
+	`));
+	document.head.appendChild(style);
+
+	Array.prototype.forEach.call(document.querySelectorAll("pre, p, code"), function (elem) {
+		var text = elem.innerText.replace(/^\s*(.*)\s*$/, function (all, m1) {
+			return m1;
+		}).replace(/^"(.*)"$/, function (all, m1) {
+			return m1;
+		});
+		if (/^\\\\[^\r\n]+$/.test(text)) {
+			elem.classList.add(className);
+			elem.title = "クリック（左/中）でローカルファイルを開く\nby Chrome拡張：ローカルファイルリンク有効化";
+			elem.addEventListener("mousedown", function (evt) {
+				var button = evt.button;
+				if (button === Button.LEFT || button === Button.MIDDLE) {
+					evt.preventDefault();
+					chrome.runtime.sendMessage({
+						method: "openLocalFile",
+						path: "file:" + text
+					});
+				}
+			});
+		}
+	});
+})();
