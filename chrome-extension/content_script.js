@@ -1,5 +1,9 @@
 
 document.body.addEventListener("click", function (evt) {
+    // ユーザーの操作によるイベントならisTrusted == true
+    // Chrome 46.0～
+    // https://developer.mozilla.org/ja/docs/Web/API/Event/isTrusted
+    if (!evt.isTrusted) return;
     var target = evt.target;
     while (target.parentNode && target.tagName !== "A") {
         target = target.parentNode;
