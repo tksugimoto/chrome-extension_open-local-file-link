@@ -1,6 +1,6 @@
 {
 	"name": "ローカルファイルリンク有効化",
-	"version": "0.1",
+	"version": "0.2",
 	"manifest_version": 2,
 	"description": "Chromeで無効にされているローカルファイルへのリンクをクリックで開けるようにする",
 	"icons": {
