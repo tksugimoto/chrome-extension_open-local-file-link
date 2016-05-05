@@ -7,8 +7,7 @@
 		"128": "icon/icon.png"
 	},
 	"permissions": [
-		"*://*/*",
-		"notifications"
+		"*://*/*"
 	],
 	"background": {
 		"scripts": [
