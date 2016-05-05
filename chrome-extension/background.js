@@ -1,11 +1,11 @@
 "use strict";
 
-chrome.runtime.onInstalled.addListener(function (details) {
+chrome.runtime.onInstalled.addListener(function () {
 	// 読み込み/更新時に既存のタブで実行する
 	chrome.tabs.query({
 		url: "*://*/*"
-	}, function(result){
-		result.forEach(function (tab){
+	}, function (result) {
+		result.forEach(function (tab) {
 			chrome.tabs.executeScript(tab.id, {
 				file: "content_script.js",
 				allFrames: true
@@ -18,7 +18,7 @@ chrome.runtime.onInstalled.addListener(function (details) {
 	});
 });
 
-chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
+chrome.runtime.onMessage.addListener(function (request, sender) {
 	if (request.method === "openLocalFile") {
 		var localFilePath = request.path;
 		var tab = sender.tab;
