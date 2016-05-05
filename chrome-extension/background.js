@@ -1,6 +1,9 @@
 "use strict";
 
 chrome.runtime.onInstalled.addListener(function () {
+	// ver. 0.1の時に使っていたlocalStorageの削除
+	localStorage.clear();
+
 	// 読み込み/更新時に既存のタブで実行する
 	chrome.tabs.query({
 		url: "*://*/*"
