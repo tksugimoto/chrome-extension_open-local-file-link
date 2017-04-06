@@ -47,7 +47,7 @@ var Button = {
 			text-decoration: none;
 		}
 	`));
-	document.head.appendChild(style);
+	(document.head || document.body).appendChild(style);
 
 	Array.prototype.forEach.call(document.querySelectorAll("pre, p, code"), function (elem) {
 		var text = elem.innerText.replace(/^\s*(.*)\s*$/, function (all, m1) {
