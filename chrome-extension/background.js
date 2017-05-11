@@ -23,8 +23,8 @@ chrome.runtime.onInstalled.addListener(function () {
 
 chrome.runtime.onMessage.addListener(function (request, sender) {
 	if (request.method === "openLocalFile") {
-		var localFilePath = request.path;
-		var tab = sender.tab;
+		const localFilePath = request.path;
+		const tab = sender.tab;
 		openLocalFile(localFilePath, tab);
 	}
 });
