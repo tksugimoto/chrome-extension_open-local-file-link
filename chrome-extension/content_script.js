@@ -10,7 +10,7 @@ document.body.addEventListener("click", evt => {
 	}
 	if (target.tagName === "A") {
 		const url = target.href;
-		if (url.lastIndexOf("file://", 0) === 0) {
+		if (url.startsWith("file://")) {
 			evt.preventDefault();
 			// 拡張が再読み込みされた場合エラーになるので捕捉
 			try {
