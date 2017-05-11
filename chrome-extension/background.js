@@ -7,8 +7,8 @@ chrome.runtime.onInstalled.addListener(() => {
 	// 読み込み/更新時に既存のタブで実行する
 	chrome.tabs.query({
 		url: "*://*/*"
-	}, result => {
-		result.forEach(tab => {
+	}, tabs => {
+		tabs.forEach(tab => {
 			chrome.tabs.executeScript(tab.id, {
 				file: "content_script.js",
 				allFrames: true
@@ -21,18 +21,18 @@ chrome.runtime.onInstalled.addListener(() => {
 	});
 });
 
-chrome.runtime.onMessage.addListener((request, sender) => {
-	if (request.method === "openLocalFile") {
-		const localFilePath = request.path;
+chrome.runtime.onMessage.addListener((message, sender) => {
+	if (message.method === "openLocalFile") {
+		const localFileUrl = message.localFileUrl;
 		const tab = sender.tab;
-		openLocalFile(localFilePath, tab);
+		openLocalFile(localFileUrl, tab);
 	}
 });
 
 
-const openLocalFile = (localFilePath, baseTab) => {
+const openLocalFile = (localFileUrl, baseTab) => {
 	chrome.tabs.create({
-		url: localFilePath,
+		url: localFileUrl,
 		index: baseTab.index + 1
 	});
 };

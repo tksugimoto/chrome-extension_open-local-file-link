@@ -9,14 +9,14 @@ document.body.addEventListener("click", evt => {
 		target = target.parentNode;
 	}
 	if (target.tagName === "A") {
-		const path = target.href;
-		if (path.lastIndexOf("file://", 0) === 0) {
+		const url = target.href;
+		if (url.lastIndexOf("file://", 0) === 0) {
 			evt.preventDefault();
 			// 拡張が再読み込みされた場合エラーになるので捕捉
 			try {
 				chrome.runtime.sendMessage({
 					method: "openLocalFile",
-					path: path
+					localFileUrl: url
 				});
 			} catch (e) {}
 		}
