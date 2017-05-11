@@ -49,6 +49,7 @@ var Button = {
 	`));
 	(document.head || document.body).appendChild(style);
 
+	// TODO: 動的に作られた要素に対応
 	Array.prototype.forEach.call(document.querySelectorAll("pre, p, code"), function (elem) {
 		var text = elem.innerText.replace(/^\s*(.*)\s*$/, function (all, m1) {
 			return m1;
