@@ -5,10 +5,10 @@ document.body.addEventListener("click", evt => {
 	// https://developer.mozilla.org/ja/docs/Web/API/Event/isTrusted
 	if (!evt.isTrusted) return;
 	let target = evt.target;
-	while (target.parentNode && target.tagName !== "A") {
+	while (target && target.tagName !== "A") {
 		target = target.parentNode;
 	}
-	if (target.tagName === "A") {
+	if (target) {
 		const url = target.href;
 		if (url.startsWith("file://")) {
 			evt.preventDefault();
