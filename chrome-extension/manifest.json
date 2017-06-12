@@ -1,9 +1,10 @@
 {
-	"name": "ローカルファイルリンク有効化",
+	"name": "__MSG_extension_name__",
 	"version": "0.3",
 	"manifest_version": 2,
+	"default_locale": "ja",
 	"key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAgvksrHFKxFAUZKrzXyHv2CKWNWNzrzQAs5pgsA8tSN6QttOIAZ/peBVWuWLygw99qBMuTGZZRDn5jqLdhQrGi/viH6TDYaiAdbrJgZIEfn9JPTCu5UTQROZ85miYwIP7J9mu8f43wUJOiDf2zb6SRmqRs4LaNNYcBM8ktnMdb7uHlDQQbrLcUT3CrDrkHp6MRXUDTdkQ/pVjitnc+k+H0sogQ8IajHDPidWuADn59ilw7qJwxzTTDPKl6/nOWKJjpyELFvb/QEvY3tYDzEex0mq5g1HpLfAT6Flp0l6P4u3PRpdlF3lggIudMBLiiLbBqhFNXkQZoI46C9Rv5jTQTwIDAQAB",
-	"description": "Chromeで無効にされているローカルファイルへのリンクをクリックで開けるようにする",
+	"description": "__MSG_extension_description__",
 	"icons": {
 		"128": "icon/icon.png"
 	},
