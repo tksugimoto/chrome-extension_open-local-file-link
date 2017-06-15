@@ -14,7 +14,8 @@ chrome.runtime.onInstalled.addListener(() => {
 				allFrames: true
 			}, result => {
 				if (typeof result === "undefined") {
-					console.info("ページが読み込まれていません", tab);
+					const message = chrome.i18n.getMessage("page_not_loaded");
+					console.info(message, tab);
 				}
 			});
 		});
