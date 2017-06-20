@@ -1,3 +1,5 @@
+( [English](README.md) / **日本語(Japanese)** )
+
 # 機能
 IEと違いChromeだとローカルファイルへのリンク（file://～）があっても開けないので、拡張で開けるようにする
 
@@ -17,4 +19,3 @@ https://chrome.google.com/webstore/detail/nikfmfgobenbhmocjaaboihbeocackld
         - [Event.isTrusted - Web API インターフェイス | MDN](https://developer.mozilla.org/ja/docs/Web/API/Event/isTrusted "https://developer.mozilla.org/ja/docs/Web/API/Event/isTrusted")を使用
 - [ ] \<pre>や\<code>内のローカルファイルのパスをリンク化
 - [ ] pptやxlsなどは直接ファイルを開くようにする（Native Messaging + レジストリ変更が必要）
-
