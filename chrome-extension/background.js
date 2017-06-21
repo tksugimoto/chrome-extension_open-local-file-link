@@ -2,9 +2,11 @@
 
 chrome.runtime.onInstalled.addListener(() => {
 	// ver. 0.1の時に使っていたlocalStorageの削除
+	// Remove localStorage data that is used by extension ver. 0.1.
 	localStorage.clear();
 
 	// 読み込み/更新時に既存のタブで実行する
+	// Execute content scripts for existing tabs when extension installed/reloaded.
 	chrome.tabs.query({
 		url: "*://*/*"
 	}, tabs => {
@@ -14,7 +16,8 @@ chrome.runtime.onInstalled.addListener(() => {
 				allFrames: true
 			}, result => {
 				if (typeof result === "undefined") {
-					console.info("ページが読み込まれていません", tab);
+					const message = chrome.i18n.getMessage("page_not_loaded");
+					console.info(message, tab);
 				}
 			});
 		});
