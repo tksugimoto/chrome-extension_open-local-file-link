@@ -9,6 +9,7 @@
 		"128": "icon/icon.png"
 	},
 	"permissions": [
+		"nativeMessaging",
 		"*://*/*"
 	],
 	"background": {
