@@ -1,4 +1,4 @@
-( [English](README.md) / **日本語(Japanese)** )
+( [English](README.md) / [Français(French)](README-fr.md) / **日本語(Japanese)** )
 
 # 機能
 IEと違いChromeだとローカルファイルへのリンク（file://～）があっても開けないので、拡張で開けるようにする
