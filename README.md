@@ -1,6 +1,6 @@
 ( **English** /[Français(French)](README-fr.md)/[日本語(Japanese)](README-ja.md) )
 
-# Accéder aux fichiers locaux
+# Enable local file links
 Unlike IE, Chrome can not open a link to a local file (file://).
 This extension allows you to open a local file link.
 
