@@ -1,5 +1,5 @@
 
-( **French** / [日本語(Japanese)](README-ja.md) )
+( **French** /[English](README.md) /[日本語(Japanese)](README-ja.md) )
 
 # Enable local file links
 A l'inverse d'IE, Chrome ne peut pas ouvrir de fichier local (file://).
