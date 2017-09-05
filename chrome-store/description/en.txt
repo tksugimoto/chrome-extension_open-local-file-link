@@ -1,0 +1,9 @@
+In Google Chrome, links to local files are disabled, unlike IE.
+This extension allows you to open a link to a local file by clicking it.
+
+[Security]
+A malicious page can not open a local file without permission, because this extension reacts only to the click operation by the user.
+
+[Others]
+Personal information is not collected / used.
+Source code is released to GitHub (see "Website" link).
