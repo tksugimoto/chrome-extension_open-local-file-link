@@ -1,0 +1,9 @@
+Dans Google Chrome, les liens vers les fichiers locaux sont désactivés, contrairement à IE.
+Cette extension vous permet d'ouvrir un lien vers un fichier local en cliquant dessus.
+
+[Sécurité]
+Une page malveillante ne peut pas ouvrir un fichier local sans autorisation, car cette extension réagit uniquement à l'opération de clic par l'utilisateur.
+
+[Autres]
+Les informations personnelles ne sont pas collectées ou utilisées.
+Le code source est diffusé sur GitHub (voir le lien "Site Web").

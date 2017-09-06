@@ -21,3 +21,6 @@ https://chrome.google.com/webstore/detail/nikfmfgobenbhmocjaaboihbeocackld
         - [Event.isTrusted - Web APIs | MDN](https://developer.mozilla.org/en/docs/Web/API/Event/isTrusted "https://developer.mozilla.org/en/docs/Web/API/Event/isTrusted") est utilisé.
 - [ ] Lier les fichiers locaux dans les balises `<pre>` ou `<code>`.
 - [ ] Faire en sorte que les fichiers ppt, xls etc. s'ouvrent directement (Native Messaging + changement du registre nécessaire).
+
+# Description pour Chrome Store
+[./chrome-store/description/fr.txt](./chrome-store/description/fr.txt)
