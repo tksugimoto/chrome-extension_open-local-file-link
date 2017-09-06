@@ -20,3 +20,6 @@ https://chrome.google.com/webstore/detail/nikfmfgobenbhmocjaaboihbeocackld
         - [Event.isTrusted - Web APIs | MDN](https://developer.mozilla.org/en/docs/Web/API/Event/isTrusted "https://developer.mozilla.org/en/docs/Web/API/Event/isTrusted") is used.
 - [ ] Link local file path in `<pre>` or `<code>`.
 - [ ] Make ppt, xls etc. open files directly (Native Messaging + registry change required).
+
+# Description for Chrome Store
+[./chrome-store/description/en.txt](./chrome-store/description/en.txt)
