@@ -18,7 +18,7 @@ document.body.addEventListener("click", evt => {
 			try {
 				chrome.runtime.sendMessage({
 					method: "openLocalFile",
-					localFileUrl: url
+					localFileUrl: url,
 				});
 			} catch (e) {}
 		}

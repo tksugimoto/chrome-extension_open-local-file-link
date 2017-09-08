@@ -8,12 +8,12 @@ chrome.runtime.onInstalled.addListener(() => {
 	// 読み込み/更新時に既存のタブで実行する
 	// Execute content scripts for existing tabs when extension installed/reloaded.
 	chrome.tabs.query({
-		url: "*://*/*"
+		url: "*://*/*",
 	}, tabs => {
 		tabs.forEach(tab => {
 			chrome.tabs.executeScript(tab.id, {
 				file: "content_script.js",
-				allFrames: true
+				allFrames: true,
 			}, result => {
 				if (typeof result === "undefined") {
 					const message = chrome.i18n.getMessage("page_not_loaded");
@@ -36,6 +36,6 @@ chrome.runtime.onMessage.addListener((message, sender) => {
 const openLocalFile = (localFileUrl, baseTab) => {
 	chrome.tabs.create({
 		url: localFileUrl,
-		index: baseTab.index + 1
+		index: baseTab.index + 1,
 	});
 };
