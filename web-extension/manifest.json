@@ -13,8 +13,7 @@
 	"background": {
 		"scripts": [
 			"background.js"
-		],
-		"persistent": false
+		]
 	},
 	"content_scripts": [{
 		"all_frames": true,
