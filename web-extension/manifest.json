@@ -7,9 +7,6 @@
 	"icons": {
 		"128": "icon/icon.png"
 	},
-	"permissions": [
-		"*://*/*"
-	],
 	"background": {
 		"scripts": [
 			"background.js"
