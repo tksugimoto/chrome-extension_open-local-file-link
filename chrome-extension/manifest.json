@@ -8,23 +8,11 @@
 	"icons": {
 		"128": "icon/icon.png"
 	},
-	"permissions": [
-		"*://*/*"
-	],
 	"background": {
 		"scripts": [
 			"background.js"
 		],
 		"persistent": false
 	},
-	"content_scripts": [{
-		"all_frames": true,
-		"matches": [
-			"*://*/*"
-		],
-		"js": [
-			"content_script.js"
-		]
-	}],
 	"minimum_chrome_version": "46.0"
 }
