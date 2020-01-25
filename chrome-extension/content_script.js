@@ -11,7 +11,7 @@ document.body.addEventListener('click', evt => {
 	}
 	if (target) {
 		// check for baseVal of svg a tag's href-SVGAnimatedString
-		const url = target.href && (target.href.baseVal || target.href);
+		const url = target instanceof SVGAElement ? target.href.baseVal : target.href;
 		if (url && url.startsWith && url.startsWith('file://')) {
 			evt.preventDefault();
 			// 拡張が再読み込みされた場合エラーになるので捕捉
