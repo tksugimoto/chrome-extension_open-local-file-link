@@ -6,8 +6,8 @@ document.body.addEventListener('click', evt => {
 	// https://developer.mozilla.org/ja/docs/Web/API/Event/isTrusted
 	if (!evt.isTrusted) return;
 	let target = evt.target;
-	while (target && target.tagName && target.tagName.toLowerCase() !== 'a') {
-		target = target.parentNode;
+	while (target && target.tagName.toLowerCase() !== 'a') {
+		target = target.parentElement;
 	}
 	if (target) {
 		// check for baseVal of svg a tag's href-SVGAnimatedString
