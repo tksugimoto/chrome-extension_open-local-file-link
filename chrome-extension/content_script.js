@@ -1,5 +1,5 @@
 
-document.body.addEventListener('click', evt => {
+window.addEventListener('click', evt => {
 	// ユーザーの操作によるイベントならisTrusted == true
 	// If event is fired by user's operation then isTrusted == true.
 	// Chrome 46.0～
