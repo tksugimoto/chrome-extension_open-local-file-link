@@ -1,0 +1,9 @@
+version: '3'
+
+services:
+  httpd:
+    image: httpd:2.4
+    volumes:
+      - ./src/:/usr/local/apache2/htdocs/:ro
+    ports:
+      - "${HTTPD_SERVER_BIND_IP_PORT:-127.0.0.1:80}:80"
