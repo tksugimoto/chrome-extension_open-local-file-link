@@ -24,4 +24,6 @@ window.addEventListener('click', evt => {
 			} catch (e) {}
 		}
 	}
+}, {
+	capture: true,
 });
