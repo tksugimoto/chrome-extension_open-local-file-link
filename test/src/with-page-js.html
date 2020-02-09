@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+		body {
+			width: 700px;
+			margin-right: auto;
+			margin-left: auto;
+		}
+	</style>
+</head>
+<body>
+<h2>HTML &lt;a href="*"&gt;</h2>
+<p>
+	<a id="output"></a>
+</p>
+<h2>SVG &lt;a href="*"&gt;</h2>
+<p>
+	<svg
+		xmlns="http://www.w3.org/2000/svg"
+		xmlns:xlink="http://www.w3.org/1999/xlink"
+		width="100%"
+		height="40"
+	>
+		<a id="output-svg-href">
+			<text dominant-baseline="text-before-edge"></text>
+		</a>
+	</svg>
+</p>
+<h2>SVG &lt;a xlink:href="*"&gt;</h2>
+<p>
+	<svg
+		xmlns="http://www.w3.org/2000/svg"
+		xmlns:xlink="http://www.w3.org/1999/xlink"
+		width="100%"
+		height="40"
+	>
+		<a id="output-svg-xlink-href" style="display: inline;">
+			<text dominant-baseline="text-before-edge"></text>
+		</a>
+	</svg>
+</p>
+<script>
+const updateLink = filePath => {
+	let encodedPath = encodeURI(filePath.replace(/\\/g, "/"));
+	if (!encodedPath.startsWith('//')) {
+		encodedPath = "//localhost/" + encodedPath;
+	}
+
+	const url = `file:${encodedPath}`.replace(/[#]/g, encodeURIComponent);
+
+	const link = document.getElementById('output');
+	link.href = url;
+	link.innerText = filePath;
+
+	document.querySelector('#output-svg-href').setAttribute('href', url);
+	document.querySelector('#output-svg-href text').textContent = filePath;
+
+	document.querySelector('#output-svg-xlink-href').setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', url);
+	document.querySelector('#output-svg-xlink-href text').textContent = filePath;
+};
+
+updateLink('C:\\Users\\Public');
+
+document.querySelectorAll('a').forEach(a => {
+	a.addEventListener('click', evt => {
+		console.log('clicked', evt.target);
+		evt.preventDefault();
+		evt.stopPropagation();
+	});
+});
+</script>
+</body>
