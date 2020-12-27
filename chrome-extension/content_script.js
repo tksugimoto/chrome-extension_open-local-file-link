@@ -6,7 +6,7 @@ window.addEventListener('click', evt => {
 	// https://developer.mozilla.org/ja/docs/Web/API/Event/isTrusted
 	if (!evt.isTrusted) return;
 	let target = evt.target;
-	while (target && target.tagName.toLowerCase() !== 'a') {
+	while (target && target.tagName.toLowerCase() !== 'a' && target.tagName.toLowerCase() !== 'area') {
 		target = target.parentElement;
 	}
 	if (target) {

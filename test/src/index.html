@@ -14,6 +14,13 @@
 <p>
 	<a id="output"></a>
 </p>
+<h2>HTML &lt;area href="*"&gt;</h2>
+<p>
+	<map name="infographic">
+		<area id="output-area" shape="rect" coords="100,50,330,130"/>
+	</map>
+	<img usemap="#infographic" src="./map-background.png" alt="Map background" />
+</p>
 <h2>SVG &lt;a href="*"&gt;</h2>
 <p>
 	<svg
@@ -52,6 +59,10 @@ const updateLink = filePath => {
 	const link = document.getElementById('output');
 	link.href = url;
 	link.innerText = filePath;
+
+	const areaLink = document.getElementById('output-area');
+	areaLink.href = url;
+	areaLink.title = filePath;
 
 	document.querySelector('#output-svg-href').setAttribute('href', url);
 	document.querySelector('#output-svg-href text').textContent = filePath;
