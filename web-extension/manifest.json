@@ -1,0 +1,24 @@
+{
+	"name": "__MSG_extension_name__",
+	"version": "0.5.1",
+	"manifest_version": 2,
+	"default_locale": "en",
+	"description": "__MSG_extension_description__",
+	"icons": {
+		"128": "icon/icon.png"
+	},
+	"background": {
+		"scripts": [
+			"background.js"
+		]
+	},
+	"content_scripts": [{
+		"all_frames": true,
+		"matches": [
+			"*://*/*"
+		],
+		"js": [
+			"content_script.js"
+		]
+	}]
+}
