@@ -7,9 +7,14 @@ chrome.runtime.onInstalled.addListener(() => {
 		url: '*://*/*',
 	}, tabs => {
 		tabs.forEach(tab => {
-			chrome.tabs.executeScript(tab.id, {
-				file: 'content_script.js',
-				allFrames: true,
+			chrome.scripting.executeScript({
+				files: [
+					'content_script.js',
+				],
+				target: {
+					tabId: tab.id,
+					allFrames: true,
+				},
 			}, result => {
 				if (typeof result === 'undefined') {
 					const message = chrome.i18n.getMessage('page_not_loaded');
