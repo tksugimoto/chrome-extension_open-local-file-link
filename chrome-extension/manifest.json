@@ -26,5 +26,5 @@
 			"content_script.js"
 		]
 	}],
-	"minimum_chrome_version": "46.0"
+	"minimum_chrome_version": "88"
 }
