@@ -12,6 +12,7 @@
 		"scripting"
 	],
 	"host_permissions": [
+		"file:///*",
 		"*://*/*"
 	],
 	"background": {
