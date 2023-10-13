@@ -1,6 +1,10 @@
 Dans Google Chrome, les liens vers les fichiers locaux sont désactivés, contrairement à IE.
 Cette extension vous permet d'ouvrir un lien vers un fichier local en cliquant dessus.
 
+[Paramètre]
+À partir de Chrome 118 en octobre 2023, vous devrez activer le paramètre « Autoriser l'accès aux URL des fichiers » sur la page des paramètres de l'extension.
+chrome://extensions/?id=nikfmfgobenbhmocjaaboihbeocackld
+
 [Sécurité]
 Une page malveillante ne peut pas ouvrir un fichier local sans autorisation, car cette extension réagit uniquement à l'opération de clic par l'utilisateur.
 
