@@ -29,14 +29,14 @@ chrome.runtime.onMessage.addListener((message, sender) => {
 	if (message.method === 'openLocalFile') {
 		const localFileUrl = message.localFileUrl;
 		const tab = sender.tab;
-		openLocalFile(localFileUrl, tab);
+		openTab(localFileUrl, tab);
 	}
 });
 
 
-const openLocalFile = (localFileUrl, baseTab) => {
+const openTab = (url, baseTab) => {
 	chrome.tabs.create({
-		url: localFileUrl,
+		url,
 		index: baseTab.index + 1,
 	});
 };
