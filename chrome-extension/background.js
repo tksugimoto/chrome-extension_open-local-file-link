@@ -25,10 +25,15 @@ chrome.runtime.onInstalled.addListener(() => {
 	});
 });
 
-chrome.runtime.onMessage.addListener((message, sender) => {
+chrome.runtime.onMessage.addListener(async (message, sender) => {
 	if (message.method === 'openLocalFile') {
 		const localFileUrl = message.localFileUrl;
 		const tab = sender.tab;
+		const canOpen = await chrome.extension.isAllowedFileSchemeAccess();
+		if (!canOpen) {
+			openTab(chrome.runtime.getURL('/options/index.html#need-file-scheme-access'), tab);
+			return;
+		}
 		openTab(localFileUrl, tab);
 	}
 });

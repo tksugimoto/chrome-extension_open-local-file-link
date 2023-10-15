@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<style>
+		body {
+			max-width: 800px;
+			margin: 0 auto;
+		}
+		[lang] {
+			display: none;
+		}
+		:target {
+			background-color: pink;
+			border-radius: 0.25rem;
+		}
+		details {
+			background-color: lightcyan;
+		}
+		summary {
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+	<h1>
+		<span lang="en">Settings</span>
+		<span lang="ja">設定</span>
+	</h1>
+	<div id="need-file-scheme-access">
+		<h2>
+			<span lang="en">Enabling the feature</span>
+			<span lang="ja">機能の有効化</span>
+		</h2>
+		<p data-if-file-scheme-access-allowed="true">
+			<span lang="en">✔️ Setting changes have been completed.</span>
+			<span lang="ja">✔️ 設定済み</span>
+		</p>
+		<p data-if-file-scheme-access-allowed="false">
+			<span lang="en">⚠️ Settings change required.</span>
+			<span lang="ja">⚠️ 設定変更が必要です</span>
+		</p>
+		<ol>
+			<li>
+				<span lang="en">Open <a data-id="extension-page-link">extensions page</a></span>
+				<span lang="ja"><a data-id="extension-page-link">extensions page</a>を開く</span>
+			</li>
+			<li>
+				<span lang="en">Enable "Allow access to file URLs"</span>
+				<span lang="ja">「ファイルの URL へのアクセスを許可する」を有効にする</span>
+			</li>
+		</ol>
+		<details>
+			<summary>
+				<span lang="en">More information</span>
+				<span lang="ja">詳細情報</span>
+			</summary>
+			<ul>
+				<li>
+					<a target="_blank" href="https://developer.chrome.com/docs/extensions/whatsnew/#changes-to-file-scheme">What's new in Chrome extensions - Chrome for Developers</a>
+					<blockquote>Beginning in Chrome 118, extensions will need the "Allow access to file URLs" setting enabled from the <code>chrome://extensions</code> page to open file:// scheme URLs using the Tabs or Windows APIs.</blockquote>
+				</li>
+				<li>
+					<a target="_blank" href="https://groups.google.com/a/chromium.org/g/chromium-extensions/c/ZtCvVISQU54/m/tOjjlzkfAgAJ">Restricting use of file: URLs in tabs and windows APIs</a>
+				</li>
+			</ul>
+		</details>
+	</div>
+	<script src="./index.js"></script>
+</body>
+</html>

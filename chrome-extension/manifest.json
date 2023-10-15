@@ -18,6 +18,7 @@
 	"background": {
 		"service_worker": "background.js"
 	},
+	"options_page": "options/index.html",
 	"content_scripts": [{
 		"all_frames": true,
 		"matches": [
