@@ -1,5 +1,13 @@
 'use strict';
 
+/***************************************************************************************/
+// When installed from the store, it seems that chrome.runtime.onInstalled.addListener is not called when updating the extension by changing settings.
+// Debugging processing for considering countermeasures
+console.info('loaded');
+chrome.runtime.onInstalled.addListener(() => console.info('onInstalled'));
+chrome.runtime.onSuspend.addListener(() => console.info('onSuspend'));
+/***************************************************************************************/
+
 chrome.runtime.onInstalled.addListener(() => {
 	// 読み込み/更新時に既存のタブで実行する
 	// Execute content scripts for existing tabs when extension installed/reloaded.
