@@ -4,7 +4,7 @@ chrome.runtime.onInstalled.addListener(() => {
 	// 読み込み/更新時に既存のタブで実行する
 	// Execute content scripts for existing tabs when extension installed/reloaded.
 	chrome.tabs.query({
-		url: '*://*/*',
+		url: '*://*/*', // only http:// or https:// page
 	}, tabs => {
 		tabs.forEach(tab => {
 			chrome.scripting.executeScript({
