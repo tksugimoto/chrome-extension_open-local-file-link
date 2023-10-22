@@ -9,6 +9,7 @@
 		"128": "icon/icon.png"
 	},
 	"permissions": [
+		"storage",
 		"scripting"
 	],
 	"host_permissions": [

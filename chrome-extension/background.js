@@ -29,6 +29,21 @@ const addClickEventListenerToExistingTab = () => {
 	});
 };
 
+chrome.extension.isAllowedFileSchemeAccess().then(isAllowed => {
+	const key = 'isAllowedFileSchemeAccess.prev';
+	chrome.storage.local.get(key, result => {
+		const prevValue = result[key];
+		if (typeof prevValue === 'boolean') {
+			if (prevValue !== isAllowed) {
+				addClickEventListenerToExistingTab();
+			}
+		}
+		chrome.storage.local.set({
+			[key]: isAllowed,
+		});
+	});
+});
+
 chrome.runtime.onMessage.addListener(async (message, sender) => {
 	if (message.method === 'openLocalFile') {
 		const localFileUrl = message.localFileUrl;
