@@ -1,5 +1,5 @@
 
-window.addEventListener('click', evt => {
+if (!window.alreadyExecuted) window.addEventListener('click', evt => {
 	// ユーザーの操作によるイベントならisTrusted == true
 	// If event is fired by user's operation then isTrusted == true.
 	// Chrome 46.0～
@@ -27,3 +27,5 @@ window.addEventListener('click', evt => {
 }, {
 	capture: true,
 });
+
+window.alreadyExecuted = true;

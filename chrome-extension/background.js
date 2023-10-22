@@ -3,6 +3,10 @@
 chrome.runtime.onInstalled.addListener(() => {
 	// 読み込み/更新時に既存のタブで実行する
 	// Execute content scripts for existing tabs when extension installed/reloaded.
+	addClickEventListenerToExistingTab();
+});
+
+const addClickEventListenerToExistingTab = () => {
 	chrome.tabs.query({
 		url: '*://*/*', // only http:// or https:// page
 	}, tabs => {
@@ -21,6 +25,21 @@ chrome.runtime.onInstalled.addListener(() => {
 					console.info(message, tab);
 				}
 			});
+		});
+	});
+};
+
+chrome.extension.isAllowedFileSchemeAccess().then(isAllowed => {
+	const key = 'isAllowedFileSchemeAccess.prev';
+	chrome.storage.local.get(key, result => {
+		const prevValue = result[key];
+		if (typeof prevValue === 'boolean') {
+			if (prevValue !== isAllowed) {
+				addClickEventListenerToExistingTab();
+			}
+		}
+		chrome.storage.local.set({
+			[key]: isAllowed,
 		});
 	});
 });
