@@ -44,23 +44,24 @@ chrome.extension.isAllowedFileSchemeAccess().then(isAllowed => {
 	});
 });
 
-chrome.runtime.onMessage.addListener(async (message, sender) => {
+chrome.runtime.onMessage.addListener((message, sender) => {
 	if (message.method === 'openLocalFile') {
 		const localFileUrl = message.localFileUrl;
 		const tab = sender.tab;
-		const canOpen = await chrome.extension.isAllowedFileSchemeAccess();
-		if (!canOpen) {
-			openTab(chrome.runtime.getURL('/options/index.html#need-file-scheme-access'), tab);
-			return;
-		}
-		openTab(localFileUrl, tab);
+		openTab(localFileUrl, tab, createdTab => {
+			// When set using GPO, chrome.extension.isAllowedFileSchemeAccess returns false but tabs can be opened
+			// Therefore, it is determined whether the tab can actually be opened.
+			if (!createdTab) { // If the tab doesn't open
+				openTab(chrome.runtime.getURL('/options/index.html#need-file-scheme-access'), tab);
+			}
+		});
 	}
 });
 
 
-const openTab = (url, baseTab) => {
+const openTab = (url, baseTab, callback = () => {}) => {
 	chrome.tabs.create({
 		url,
 		index: baseTab.index + 1,
-	});
+	}, callback);
 };
