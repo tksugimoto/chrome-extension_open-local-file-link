@@ -17,6 +17,7 @@
 		details {
 			background-color: lightcyan;
 		}
+		button:not([disabled]),
 		summary {
 			cursor: pointer;
 		}
@@ -57,6 +58,20 @@
 				<span lang="ja">「ファイルの URL へのアクセスを許可する」を有効にする</span>
 			</li>
 		</ol>
+		<h2>
+			<span lang="en">Confirm the operation</span>
+			<span lang="ja">動作確認</span>
+		</h2>
+		<button id="test">
+			<span lang="en">Open <code>file:///C:/</code></span>
+			<span lang="ja"><code>file:///C:/</code>を開く</span>
+		</button>
+		<p>
+			Result: <span id="test-result">
+				<span lang="en">Unconfirmed</span>
+				<span lang="ja">未確認</span>
+			</span>
+		</p>
 		<details>
 			<summary>
 				<span lang="en">More information</span>
