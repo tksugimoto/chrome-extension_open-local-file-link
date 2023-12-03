@@ -20,6 +20,13 @@
 		summary {
 			cursor: pointer;
 		}
+		[data-if-file-scheme-access-allowed] {
+			display: none;
+		}
+		body[data-file-scheme-access-allowed="true"] [data-if-file-scheme-access-allowed="true"],
+		body[data-file-scheme-access-allowed="false"] [data-if-file-scheme-access-allowed="false"] {
+			display: initial;
+		}
 	</style>
 </head>
 <body>

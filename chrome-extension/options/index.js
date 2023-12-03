@@ -1,9 +1,7 @@
 document.title = chrome.i18n.getMessage('extension_name');
 
 chrome.extension.isAllowedFileSchemeAccess().then(isAllowed => {
-	document.querySelectorAll(`[data-if-file-scheme-access-allowed="${!isAllowed}"]`).forEach(e => {
-		e.style.display = 'none';
-	});
+	document.body.setAttribute('data-file-scheme-access-allowed', isAllowed);
 });
 
 {
