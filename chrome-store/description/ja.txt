@@ -10,4 +10,5 @@ chrome://extensions/?id=nikfmfgobenbhmocjaaboihbeocackld
 
 【その他】
 個人情報は収集・使用していません。
-ソースコードはGitHubに公開しています（「ウェブサイト」リンク参照）。
+ソースコードはGitHubに公開しています。
+https://github.com/tksugimoto/chrome-extension_open-local-file-link

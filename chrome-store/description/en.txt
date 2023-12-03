@@ -10,4 +10,5 @@ A malicious page can not open a local file without permission, because this exte
 
 [Others]
 Personal information is not collected / used.
-Source code is released to GitHub (see "Website" link).
+Source code is released to GitHub.
+https://github.com/tksugimoto/chrome-extension_open-local-file-link

@@ -10,4 +10,5 @@ Une page malveillante ne peut pas ouvrir un fichier local sans autorisation, car
 
 [Autres]
 Les informations personnelles ne sont pas collectées ou utilisées.
-Le code source est diffusé sur GitHub (voir le lien "Site Web").
+Le code source est diffusé sur GitHub.
+https://github.com/tksugimoto/chrome-extension_open-local-file-link
