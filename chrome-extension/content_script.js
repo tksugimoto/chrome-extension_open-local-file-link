@@ -5,7 +5,7 @@ if (!window.alreadyExecuted) window.addEventListener('click', evt => {
 	// Chrome 46.0～
 	// https://developer.mozilla.org/ja/docs/Web/API/Event/isTrusted
 	if (!evt.isTrusted) return;
-	let target = evt.target;
+	let target = evt.composedPath()[0];
 	while (target && target.tagName.toLowerCase() !== 'a' && target.tagName.toLowerCase() !== 'area') {
 		target = target.parentElement;
 	}
