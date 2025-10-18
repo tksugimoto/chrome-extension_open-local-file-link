@@ -5,7 +5,10 @@ if (!window.alreadyExecuted) window.addEventListener('click', evt => {
 	// Chrome 46.0～
 	// https://developer.mozilla.org/ja/docs/Web/API/Event/isTrusted
 	if (!evt.isTrusted) return;
-	let target = evt.target;
+	// To support custom elements, we use composedPath instead of target.
+	// Note: This is not possible in the case of a closed shadowRoot.
+	// https://developer.mozilla.org/en-US/docs/Web/API/Event/composedPath
+	let target = evt.composedPath()[0];
 	while (target && target.tagName.toLowerCase() !== 'a' && target.tagName.toLowerCase() !== 'area') {
 		target = target.parentElement;
 	}
