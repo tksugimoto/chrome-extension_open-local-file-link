@@ -8,11 +8,45 @@
 			margin-left: auto;
 		}
 	</style>
+	<script>
+		customElements.define('my-link-element', class extends HTMLElement {
+			connectedCallback() {
+				const mode = this.getAttribute('mode'); // 'open' or 'closed'
+
+				this._shadowRoot = this.attachShadow({
+					mode,
+				});
+				const a = document.createElement('a');
+				const span = document.createElement('span');
+
+				a.append(`[${mode}] `);
+				a.append(span);
+				this._shadowRoot.append(a);
+			}
+
+			static get observedAttributes() {
+				return ['text', 'href'];
+			}
+			attributeChangedCallback(name, oldValue, newValue) {
+				if (name === 'text') this._shadowRoot.querySelector('span').textContent = newValue;
+				if (name === 'href') this._shadowRoot.querySelector('a').href = newValue;
+			}
+		});
+	</script>
 </head>
 <body>
 <h2>HTML &lt;a href="*"&gt;</h2>
 <p>
 	<a id="output"></a>
+</p>
+<h2>HTML custom element</h2>
+<p>
+	<my-link-element mode="open"></my-link-element>
+	⚠️ Currently, extensions are not supported.
+</p>
+<p>
+	<my-link-element mode="closed"></my-link-element>
+	⚠️ Currently, extensions are not supported.
 </p>
 <h2>HTML &lt;area href="*"&gt;</h2>
 <p>
@@ -59,6 +93,11 @@ const updateLink = filePath => {
 	const link = document.getElementById('output');
 	link.href = url;
 	link.innerText = filePath;
+
+	document.querySelectorAll('my-link-element').forEach(elem => {
+		elem.setAttribute('href', url);
+		elem.setAttribute('text', filePath);
+	});
 
 	const areaLink = document.getElementById('output-area');
 	areaLink.href = url;
