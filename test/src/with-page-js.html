@@ -49,9 +49,9 @@
 </p>
 <script>
 const updateLink = filePath => {
-	let encodedPath = encodeURI(filePath.replace(/\\/g, "/"));
+	let encodedPath = encodeURI(filePath.replace(/\\/g, '/'));
 	if (!encodedPath.startsWith('//')) {
-		encodedPath = "//localhost/" + encodedPath;
+		encodedPath = '//localhost/' + encodedPath;
 	}
 
 	const url = `file:${encodedPath}`.replace(/[#]/g, encodeURIComponent);
