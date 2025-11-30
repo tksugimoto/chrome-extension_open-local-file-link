@@ -1,0 +1,12 @@
+{
+	"extension_name": {
+		"message": "ローカルファイルリンク有効化"
+	},
+	"extension_description": {
+		"message": "Chromeで無効にされているローカルファイルへのリンクをクリックで開けるようにする"
+	},
+
+	"page_not_loaded": {
+		"message": "ページが読み込まれていません"
+	}
+}
